@@ -22,3 +22,26 @@ const toggleMenu = () => {
   close1.classList.toggle("close");
   close3.classList.toggle("close");
 };
+
+ // hero image slider
+ const images = [
+  "./assets/images/hero1.jpg",
+  "./assets/images/hero2.jpg",
+  "./assets/images/hero3.jpg",
+  "./assets/images/hero4.jpg",
+  "./assets/images/hero5.jpg",
+];
+
+const hero = document.getElementById("hero");
+let index = 0;
+
+function changeBackground() {
+  hero.classList.add("fade");
+  setTimeout(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[index]})`;
+    hero.classList.remove("fade"); 
+  }, 500);
+}
+
+setInterval(changeBackground, 5000);
