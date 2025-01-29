@@ -19,7 +19,7 @@ body {
   line-height: 1.6;
   margin: 0, auto;
   max-width: 1200px;
-  color: #333;
+  color: white;
 }
 
 .nowrap {
@@ -36,7 +36,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 999 !important;
 }
 
 #logo {
@@ -57,7 +57,7 @@ header {
 #logo img {
   width: 25px;
   height: 25px;
-  opacity: 0.8;
+  filter: brightness(0) invert(1);
 }
 
 nav ul {
@@ -71,7 +71,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: white;
   font-weight: bold;
   transition: color 0.3s ease;
 }
@@ -89,7 +89,7 @@ nav ul li a:hover {
 .hamburger span {
   width: 30px;
   height: 3px;
-  background: #333;
+  background: white;
   margin: 3px 0;
   transition: 0.3s;
 }
@@ -130,7 +130,12 @@ nav ul li a:hover {
   }
 
   nav ul li a {
+    color: #333;
     font-size: 1rem;
+  }
+
+  .hamburger span.close {
+    background: #333;
   }
 
   .hamburger {
@@ -151,4 +156,24 @@ nav ul li a:hover {
   .hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -9px);
   }
+}
+
+
+/* Hero Section */
+
+#hero {
+  position: relative;
+  top: -70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hero1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
