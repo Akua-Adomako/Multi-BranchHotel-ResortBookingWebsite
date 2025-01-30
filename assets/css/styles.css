@@ -237,16 +237,17 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
 
-/* 
+
   .search-bar .input-group label {
     display: block;
-  } */
+  } 
 
     .search-bar select,
     .search-bar input[type="date"],
     .search-bar input[type="number"] {
-      max-width: 250px;
-      height: 20px;
+      width: 250px !important;
+      height: 40px;
+      
     }
   .search-bar {
     flex-direction: column;
