@@ -45,3 +45,13 @@ function changeBackground() {
 }
 
 setInterval(changeBackground, 5000);
+
+
+function toBook() {
+  window.location.href = '../html/booking.html';
+}
+
+function toRooms() {
+  window.location.href = "../html/rooms.html";
+}
+

@@ -32,7 +32,7 @@
 
 
   <main>
-    
+    <!--Hero Section-->
     <section id="hero">
      <div class="hero-content">
         <div class="hero-text"> 
@@ -70,12 +70,36 @@
     <button type="submit">Search</button>
  </div>
   <div class="cta-buttons">
-      <button class="book-now">Book Now</button>
-      <button class="view-rooms">View Rooms</button>
+      <button class="book-now" onclick="toBook();">Book Now</button>
+      <button class="view-rooms" onclick="toRooms()">View Rooms</button>
   </div>
   </div>
     </section>
 
+    <!--About section-->
+    <section class="about-preview">
+    <div class="about-grid">
+      <div class="about-content">
+        <h2>Luxury Redefined Since 2015</h2>
+        <p class="highlight-text">Experience the Serenity Haven difference across 5 countries worldwide. Our award-winning hospitality combines local culture with modern luxury.</p>
+        <p>Discover our commitment to sustainable luxury and exceptional service.</p>
+        <a href="./html/about.html" class="about-cta">
+          Our Story →
+        </a>
+      </div>
+      <div class="about-image">
+        <img src="./assets/images/about.jpg" alt="Luxury hotel lobby" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Section -->
+  <section class="promo-section">
+    <h2>Exclusive Offers & Packages</h2>
+    <div class="promo-grid">
+      <!-- Promo Cards Here -->
+    </div>
+  </section>
   </main>
   <footer></footer>
 
