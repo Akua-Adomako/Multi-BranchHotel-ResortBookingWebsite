@@ -210,6 +210,7 @@ nav ul li a:hover {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 0.95rem;
+  color: #333;
 }
 
 .search-bar button {
@@ -234,6 +235,9 @@ nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
+  .search-bar .input-group label {
+    display: block;
+  }
   .search-bar {
     flex-direction: column;
   }
