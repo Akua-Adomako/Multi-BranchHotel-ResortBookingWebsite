@@ -25,8 +25,8 @@ body {
   margin: 0 auto;
   width: 100%;
   min-width: 320px;
-  color: white;
-  background: #1a1a1a;
+  color: #333;
+  background: white;
 }
 
 .nowrap {
@@ -55,6 +55,7 @@ header {
   font-family: "Poppins", sans-serif;
   font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: 600;
+  color: white;
 }
 
 #logo img {
@@ -143,6 +144,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 #hero {
+  background-color: #333;
   position: relative;
   display: flex;
   justify-content: center;
@@ -364,7 +366,6 @@ nav ul li a:hover {
 /* About Preview Section */
 .about-preview {
   padding: 4rem 1.5rem;
-  background: #f8fafc;
   color: #1e293b;
 }
 
@@ -419,7 +420,161 @@ nav ul li a:hover {
 
 /* Promo Section */
 .promo-section {
-  padding: 3rem 1.5rem;
-  background: #ffffff;
-  color: black;
+  padding: 4rem 1.5rem;
+  background: #fff;
+  color: #1e293b;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+/* Promo Grid */
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Promo Card */
+.promo-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #2563eb;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.card-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.promo-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.price-container {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  color: #2563eb;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.benefits-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.benefits-list li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.benefits-list li::before {
+  content: "✓";
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.promo-cta {
+  width: 100%;
+  padding: 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.promo-cta:hover {
+  background: #1d4ed8;
+}
+
+.promo-cta .arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.promo-cta:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .promo-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .card-image {
+    height: 200px;
+  }
 }

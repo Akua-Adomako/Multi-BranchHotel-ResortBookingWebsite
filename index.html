@@ -93,13 +93,64 @@
     </div>
   </section>
 
-  <!-- Promo Section -->
-  <section class="promo-section">
+<!-- After About Preview Section -->
+<section class="promo-section">
+  <div class="section-header">
     <h2>Exclusive Offers & Packages</h2>
-    <div class="promo-grid">
-      <!-- Promo Cards Here -->
-    </div>
-  </section>
+    <p>Special deals tailored for your perfect stay</p>
+  </div>
+
+  <div class="promo-grid">
+    <!-- Card 1 -->
+    <article class="promo-card" data-discount="30">
+      <div class="card-badge">Limited Offer</div>
+      <div class="card-image">
+        <img src="./assets/images/couple.jpg" alt="Romantic Package" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h3>Romantic Escape</h3>
+        <div class="price-container">
+          <span class="old-price">$599/night</span>
+          <span class="new-price">$419/night</span>
+        </div>
+        <ul class="benefits-list">
+          <li>Luxury suite with private pool</li>
+          <li>Couples spa package</li>
+          <li>Champagne & chocolate bouquet</li>
+        </ul>
+        <button class="promo-cta" onclick="handlePromoClick('romantic-escape')">
+          Book Package
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="promo-card" data-discount="25">
+      <div class="card-badge">Family Special</div>
+      <div class="card-image">
+        <img src="./assets/images/family.jpg" alt="Family Package" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h3>Family Adventure</h3>
+        <div class="price-container">
+          <span class="old-price">$899/night</span>
+          <span class="new-price">$674/night</span>
+        </div>
+        <ul class="benefits-list">
+          <li>Connecting family suites</li>
+          <li>Kids stay & eat free</li>
+          <li>Daily activities program</li>
+        </ul>
+        <button class="promo-cta" onclick="handlePromoClick('family-adventure')">
+          Book Package
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </article>
+
+  </div>
+</section>
   </main>
   <footer></footer>
 
