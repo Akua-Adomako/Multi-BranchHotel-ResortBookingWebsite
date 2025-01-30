@@ -242,6 +242,11 @@ nav ul li a:hover {
     flex-direction: column;
   }
 
+  .search-bar, .cta-buttons .book-now, .cta-buttons .view-rooms {
+    max-width: 85%;
+    margin: auto;
+  }
+
   .input-group {
     flex: 1 1 auto;
   }
