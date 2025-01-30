@@ -156,6 +156,15 @@ nav ul li a:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+#hero {
+  transition: opacity 500ms ease-in-out;
+  opacity: 1;
+}
+
+#hero.fade {
+  opacity: 0.4;
+}
+
 .hero-content {
   width: 100%;
   max-width: 800px;
@@ -180,11 +189,12 @@ nav ul li a:hover {
   padding: 15px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   color: #333;
   width: 100%;
   max-width: 800px;
   margin: 0 auto 50px;
+  text-shadow: none;
 }
 
 .input-group {
@@ -215,6 +225,12 @@ nav ul li a:hover {
 
 .search-bar button:hover {
   background: #1d4ed8;
+}
+
+@media (max-width: 850px) {
+  .search-bar {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 480px) {
@@ -263,12 +279,24 @@ nav ul li a:hover {
   background: #2563eb;
   color: white;
   box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  transition: background 0.3s ease;
+}
+
+.book-now:hover {
+  background: #1d4ed8;
 }
 
 .view-rooms {
   background: white;
   color: #2563eb;
   border: 2px solid #2563eb;
+  transition: all 0.3s ease;
+}
+
+.view-rooms:hover {
+  background: #2563eb;
+  color: white;
+  border-color: white;
 }
 
 @media (max-width: 600px) {
@@ -284,7 +312,7 @@ nav ul li a:hover {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-  
+
   header {
     padding: 10px 15px;
   }
