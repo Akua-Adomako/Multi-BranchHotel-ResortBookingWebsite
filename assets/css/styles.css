@@ -101,6 +101,7 @@ nav ul li a:hover {
   nav ul {
     position: fixed;
     top: 0;
+    bottom: 0;
     right: -100%;
     width: 100%;
     height: 100vh;
@@ -283,10 +284,7 @@ nav ul li a:hover {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-  body {
-    padding: 0 10px;
-  }
-
+  
   header {
     padding: 10px 15px;
   }
