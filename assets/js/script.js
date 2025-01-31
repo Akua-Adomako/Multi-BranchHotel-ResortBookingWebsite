@@ -147,6 +147,60 @@ document.querySelectorAll('.promo-card').forEach(card => {
 });
 
 
+
+// Gallery Carousel Logic
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const dotsContainer = document.querySelector('.carousel-dots');
+
+// Create dots
+slides.forEach((_, index) => {
+  const dot = document.createElement('span');
+  dot.addEventListener('click', () => showSlide(index));
+  dotsContainer.appendChild(dot);
+});
+
+function showSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  dotsContainer.children[currentSlide].classList.remove('active');
+  
+  currentSlide = (index + slides.length) % slides.length;
+  
+  slides[currentSlide].classList.add('active');
+  dotsContainer.children[currentSlide].classList.add('active');
+}
+
+document.querySelector('.carousel-prev').addEventListener('click', () => {
+  showSlide(currentSlide - 1);
+});
+
+document.querySelector('.carousel-next').addEventListener('click', () => {
+  showSlide(currentSlide + 1);
+});
+
+// Auto-advance
+let carouselInterval = setInterval(() => {
+  showSlide(currentSlide + 1);
+}, 5000);
+
+// Pause on hover
+document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
+  clearInterval(carouselInterval);
+});
+
+document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
+  carouselInterval = setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 5000);
+});
+
+// Initialize
+showSlide(0);
+
+
+
+
+
 // Circular Border Scroll Progress
 const scrollProgress = document.querySelector('.scroll-progress-corner');
 const circle = document.querySelector('.progress-ring-circle');
