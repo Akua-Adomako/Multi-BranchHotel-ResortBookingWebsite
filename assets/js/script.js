@@ -94,3 +94,41 @@ document.querySelectorAll('.promo-card').forEach(card => {
   card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   observer.observe(card);
 });
+
+
+// Circular Border Scroll Progress
+const scrollProgress = document.querySelector('.scroll-progress-corner');
+const circle = document.querySelector('.progress-ring-circle');
+const radius = circle.r.baseVal.value;
+const circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = circumference;
+
+function updateProgress() {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
+  const progress = circumference - (scrolled / scrollHeight) * circumference;
+  
+  circle.style.strokeDashoffset = progress;
+  scrollProgress.classList.toggle('visible', scrolled > 100);
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+window.addEventListener('scroll', updateProgress);
+scrollProgress.addEventListener('click', scrollToTop);
+
+// Mobile touch support
+scrollProgress.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  scrollToTop();
+});
+
+// Initialize
+updateProgress();
