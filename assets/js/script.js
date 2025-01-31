@@ -149,57 +149,88 @@ document.querySelectorAll('.promo-card').forEach(card => {
 
 
 // Gallery Carousel Logic
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-item');
-const dotsContainer = document.querySelector('.carousel-dots');
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryImages = [
+    { src: './assets/images/gallery1.jpg', alt: 'Luxury Suite' },
+    { src: './assets/images/gallery2.jpg', alt: 'Spa Facility' },
+    { src: './assets/images/gallery3.jpg', alt: 'Dining Area' },
+    { src: './assets/images/gallery4.jpg', alt: 'Pool View' },
+    { src: './assets/images/gallery5.jpg', alt: 'Event Space' }
+  ];
 
-// Create dots
-slides.forEach((_, index) => {
-  const dot = document.createElement('span');
-  dot.addEventListener('click', () => showSlide(index));
-  dotsContainer.appendChild(dot);
-});
+  // DOM Elements
+  const carouselTrack = document.querySelector('.carousel-track');
+  const dotsContainer = document.querySelector('.carousel-dots');
+  let currentSlide = 0;
 
-function showSlide(index) {
-  slides[currentSlide].classList.remove('active');
-  dotsContainer.children[currentSlide].classList.remove('active');
-  
-  currentSlide = (index + slides.length) % slides.length;
-  
-  slides[currentSlide].classList.add('active');
-  dotsContainer.children[currentSlide].classList.add('active');
-}
+  // Initialize Carousel
+  function initCarousel() {
+    // Create slide elements
+    galleryImages.forEach((image, index) => {
+      const slide = document.createElement('div');
+      slide.className = 'carousel-item';
+      slide.innerHTML = `
+        <img src="${image.src}" alt="${image.alt}" loading="lazy">
+      `;
+      carouselTrack.appendChild(slide);
+    });
 
-document.querySelector('.carousel-prev').addEventListener('click', () => {
-  showSlide(currentSlide - 1);
-});
+    // Create dots
+    galleryImages.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.addEventListener('click', () => showSlide(index));
+      dotsContainer.appendChild(dot);
+    });
 
-document.querySelector('.carousel-next').addEventListener('click', () => {
-  showSlide(currentSlide + 1);
-});
+    // Set initial active state
+    carouselTrack.children[0].classList.add('active');
+    dotsContainer.children[0].classList.add('active');
+  }
 
-// Auto-advance
-let carouselInterval = setInterval(() => {
-  showSlide(currentSlide + 1);
-}, 5000);
+  // Slide transition function
+  function showSlide(index) {
+    // Wrap around logic
+    if (index >= galleryImages.length) index = 0;
+    if (index < 0) index = galleryImages.length - 1;
 
-// Pause on hover
-document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
-  clearInterval(carouselInterval);
-});
+    // Update classes
+    carouselTrack.children[currentSlide].classList.remove('active');
+    dotsContainer.children[currentSlide].classList.remove('active');
+    
+    currentSlide = index;
+    
+    carouselTrack.children[currentSlide].classList.add('active');
+    dotsContainer.children[currentSlide].classList.add('active');
+  }
 
-document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
-  carouselInterval = setInterval(() => {
+  // Control event listeners
+  document.querySelector('.carousel-prev').addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+  });
+
+  document.querySelector('.carousel-next').addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+  });
+
+  // Auto-advance
+  let carouselInterval = setInterval(() => {
     showSlide(currentSlide + 1);
   }, 5000);
+
+  // Pause on hover
+  document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
+    clearInterval(carouselInterval);
+  });
+
+  document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
+    carouselInterval = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
+  });
+
+  // Initialize the carousel
+  initCarousel();
 });
-
-// Initialize
-showSlide(0);
-
-
-
-
 
 // Circular Border Scroll Progress
 const scrollProgress = document.querySelector('.scroll-progress-corner');
