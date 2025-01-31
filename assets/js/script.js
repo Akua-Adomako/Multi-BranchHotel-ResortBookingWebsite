@@ -56,6 +56,57 @@ function toRooms() {
 }
 
 
+// Testimonial Carousel Logic
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelector('.dots');
+
+// Create dots
+testimonials.forEach((_, index) => {
+  const dot = document.createElement('span');
+  dot.addEventListener('click', () => showTestimonial(index));
+  dots.appendChild(dot);
+});
+
+function showTestimonial(index) {
+  testimonials[currentTestimonial].classList.remove('active');
+  dots.children[currentTestimonial].classList.remove('active');
+  
+  currentTestimonial = (index + testimonials.length) % testimonials.length;
+  
+  testimonials[currentTestimonial].classList.add('active');
+  dots.children[currentTestimonial].classList.add('active');
+}
+
+// Navigation
+document.querySelector('.prev').addEventListener('click', () => {
+  showTestimonial(currentTestimonial - 1);
+});
+
+document.querySelector('.next').addEventListener('click', () => {
+  showTestimonial(currentTestimonial + 1);
+});
+
+// Auto-advance
+let autoSlide = setInterval(() => {
+  showTestimonial(currentTestimonial + 1);
+}, 7000);
+
+// Pause on hover
+testimonialCarousel.addEventListener('mouseenter', () => {
+  clearInterval(autoSlide);
+});
+
+testimonialCarousel.addEventListener('mouseleave', () => {
+  autoSlide = setInterval(() => {
+    showTestimonial(currentTestimonial + 1);
+  }, 7000);
+});
+
+// Initialize
+showTestimonial(0);
+
+
 // Handle promo clicks
 function handlePromoClick(promoId) {
   // Store selected promo in localStorage
@@ -132,3 +183,4 @@ scrollProgress.addEventListener('touchstart', (e) => {
 
 // Initialize
 updateProgress();
+
