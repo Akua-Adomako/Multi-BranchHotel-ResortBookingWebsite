@@ -579,6 +579,116 @@ nav ul li a:hover {
   }
 }
 
+/* Locations Preview Section */
+.locations-preview {
+  padding: 4rem 1.5rem;
+}
+
+.location-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.location-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+}
+
+.location-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover .location-image img {
+  transform: scale(1.05);
+}
+
+.location-info {
+  padding: 1.5rem;
+}
+
+.location-desc {
+  color: #64748b;
+  margin: 0.5rem 0 1rem;
+  min-height: 40px;
+}
+
+.explore-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #1d4ed8;
+}
+
+.explore-btn span {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.explore-btn:hover span {
+  transform: translateX(3px);
+}
+
+.view-all-locations {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: white;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background: #2563eb;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .location-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .location-image {
+    height: 180px;
+  }
+}
 
 /* Testimonials Section */
 .testimonials {
