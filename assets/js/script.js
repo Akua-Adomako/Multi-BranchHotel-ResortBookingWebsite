@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsContainer = document.querySelector('.carousel-dots');
   let currentSlide = 0;
 
-  // Initialize Carouse
+  // Initialize Carousel
   function initCarousel() {
     // Create slide elements
     galleryImages.forEach((image, index) => {
