@@ -151,7 +151,7 @@ document.querySelectorAll('.promo-card').forEach(card => {
 // Gallery Carousel Logic
 document.addEventListener('DOMContentLoaded', () => {
   const galleryImages = [
-    { src: './assets/images/gallery1.jpg', alt: 'Luxury Suite' },
+    { src: '../assets/images/gallery1.jpg', alt: 'Luxury Suite' },
     { src: './assets/images/gallery2.jpg', alt: 'Spa Facility' },
     { src: './assets/images/gallery3.jpg', alt: 'Dining Area' },
     { src: './assets/images/gallery4.jpg', alt: 'Pool View' },
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsContainer = document.querySelector('.carousel-dots');
   let currentSlide = 0;
 
-  // Initialize Carousel
+  // Initialize Carouse
   function initCarousel() {
     // Create slide elements
     galleryImages.forEach((image, index) => {
