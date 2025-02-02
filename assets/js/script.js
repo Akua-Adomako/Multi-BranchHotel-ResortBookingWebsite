@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { src: './assets/images/gallery5.jpg', alt: 'Event Space' }
   ];
 
-  // DOM Elements
+  // DOM Elem
   const carouselTrack = document.querySelector('.carousel-track');
   const dotsContainer = document.querySelector('.carousel-dots');
   let currentSlide = 0;
