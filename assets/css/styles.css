@@ -1358,6 +1358,7 @@ blockquote {
 }
 
 .footer-contact a {
+  text-decoration: none;
   color: #94a3b8;
   transition: color 0.3s ease;
 }
@@ -1367,10 +1368,12 @@ blockquote {
 }
 
 .footer-links li {
+  list-style: none;
   margin-bottom: 0.8rem;
 }
 
 .footer-links a {
+  text-decoration: none;
   color: #94a3b8;
   transition: color 0.3s ease;
 }
@@ -1400,4 +1403,73 @@ blockquote {
   height: 100%;
   padding: 0 1rem;
   background: #2563eb;
-  color
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #1d4ed8;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #2563eb;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.legal-links {
+  margin-bottom: 1rem;
+}
+
+.legal-links a {
+  color: #94a3b8;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #2563eb;
+}
+
+.copyright {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .trust-badges img {
+    height: 35px;
+  }
+}
