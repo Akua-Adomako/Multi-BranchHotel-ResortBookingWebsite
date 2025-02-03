@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serenity Haven Hotel - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
@@ -420,51 +421,82 @@
   </div>
 </section>
 
-<!-- Contact Us Section -->
- <section class="contact">
-  <div class="contact-header">
-    <h2>Contact Us</h2>
-    <p>Have questions or inquiries? Reach out to us</p>
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="section-header">
+      <h2>Have Questions?</h2>
+      <p>Get in touch with our concierge team</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-form">
+        <form class="modern-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="name" required>
+              <label for="name">Your Name</label>
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" required>
+              <label for="email">Email Address</label>
+              <i class="fas fa-envelope"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="subject" required>
+            <label for="subject">Subject</label>
+            <i class="fas fa-tag"></i>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" required></textarea>
+            <label for="message">Your Message</label>
+            <i class="fas fa-comment"></i>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Send Message
+            <i class="fas fa-paper-plane"></i>
+          </button>
+
+        </form>
+      </div>
+
+      <div class="contact-highlights">
+        <div class="highlight-card">
+          <div class="icon-container">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>24/7 Availability</h3>
+          <p>Our team is always ready to assist you</p>
+        </div>
+
+        <div class="highlight-card">
+          <div class="icon-container">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Secure Communication</h3>
+          <p>All your data is encrypted and protected</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="contact-form">
-    <form>
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
- </sectin>
+
+<div class="contact-cta">
+  <a href="contact.html" class="full-contact-btn">
+    View Full Contact Page
+    <i class="fas fa-chevron-right"></i>
+  </a>
+</div>
+
+</section>
 
   </main>
   <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="./assets/images/homepageImages/logo.png" alt="logo">
-        <p>Serenity Haven</p>
-      </div>
-      <div class="footer-links">
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./html/about.html">About</a></li>
-          <li><a href="./html/rooms.html">Rooms</a></li>
-          <li><a href="./html/booking.html">Booking</a></li>
-          <li><a href="./html/locations.html">Locations</a></li>
-          <li><a href="./html/gallery.html">Gallery</a></li>
-          <li><a href="./html/contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <ul>
-          <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Serenity Haven. All rights reserved.</p>
-    </div>
+    
   </footer>
 
   <script defer src="./assets/js/script.js"></script>
