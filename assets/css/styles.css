@@ -1290,3 +1290,114 @@ blockquote {
 .full-contact-btn:hover i {
   transform: translateX(3px);
 }
+
+
+
+/* Footer Styles */
+.main-footer {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 4rem 1.5rem 2rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+  margin-bottom: 2rem;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.footer-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-text {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.trust-badges img {
+  height: 40px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+.footer-contact i {
+  margin-right: 1rem;
+  color: #2563eb;
+  min-width: 20px;
+}
+
+.footer-contact a {
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #2563eb;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #2563eb;
+}
+
+.newsletter-form {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: transparent;
+  color: #ffffff;
+}
+
+.newsletter-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 1rem;
+  background: #2563eb;
+  color
