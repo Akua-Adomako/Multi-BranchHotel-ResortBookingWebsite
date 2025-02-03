@@ -25,11 +25,11 @@ const toggleMenu = () => {
 
  // hero image slider
  const images = [
-  "./assets/images/hero1.jpg",
-  "./assets/images/hero2.jpg",
-  "./assets/images/hero3.jpg",
-  "./assets/images/hero4.jpg",
-  "./assets/images/hero5.jpg",
+  "./assets/images/homepageImages/hero1.jpg",
+  "./assets/images/homepageImages/hero2.jpg",
+  "./assets/images/homepageImages/hero3.jpg",
+  "./assets/images/homepageImages/hero4.jpg",
+  "./assets/images/homepageImages/hero5.jpg",
 ];
 
 const hero = document.getElementById("hero");
@@ -145,127 +145,3 @@ document.querySelectorAll('.promo-card').forEach(card => {
   card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   observer.observe(card);
 });
-
-
-
-// Gallery Carousel Logic
-document.addEventListener('DOMContentLoaded', () => {
-  const galleryImages = [
-    { src: '../assets/images/gallery1.jpg', alt: 'Luxury Suite' },
-    { src: './assets/images/gallery2.jpg', alt: 'Spa Facility' },
-    { src: './assets/images/gallery3.jpg', alt: 'Dining Area' },
-    { src: './assets/images/gallery4.jpg', alt: 'Pool View' },
-    { src: './assets/images/gallery5.jpg', alt: 'Event Space' }
-  ];
-
-  // DOM Elements
-  const carouselTrack = document.querySelector('.carousel-track');
-  const dotsContainer = document.querySelector('.carousel-dots');
-  let currentSlide = 0;
-
-  // Initialize Carousel
-  function initCarousel() {
-    // Create slide elements
-    galleryImages.forEach((image, index) => {
-      const slide = document.createElement('div');
-      slide.className = 'carousel-item';
-      slide.innerHTML = `
-        <img src="${image.src}" alt="${image.alt}" loading="lazy">
-      `;
-      carouselTrack.appendChild(slide);
-    });
-
-    // Create dots
-    galleryImages.forEach((_, index) => {
-      const dot = document.createElement('span');
-      dot.addEventListener('click', () => showSlide(index));
-      dotsContainer.appendChild(dot);
-    });
-
-    // Set initial active state
-    carouselTrack.children[0].classList.add('active');
-    dotsContainer.children[0].classList.add('active');
-  }
-
-  // Slide transition function
-  function showSlide(index) {
-    // Wrap around logic
-    if (index >= galleryImages.length) index = 0;
-    if (index < 0) index = galleryImages.length - 1;
-
-    // Update classes
-    carouselTrack.children[currentSlide].classList.remove('active');
-    dotsContainer.children[currentSlide].classList.remove('active');
-    
-    currentSlide = index;
-    
-    carouselTrack.children[currentSlide].classList.add('active');
-    dotsContainer.children[currentSlide].classList.add('active');
-  }
-
-  // Control event listeners
-  document.querySelector('.carousel-prev').addEventListener('click', () => {
-    showSlide(currentSlide - 1);
-  });
-
-  document.querySelector('.carousel-next').addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-  });
-
-  // Auto-advance
-  let carouselInterval = setInterval(() => {
-    showSlide(currentSlide + 1);
-  }, 5000);
-
-  // Pause on hover
-  document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
-    clearInterval(carouselInterval);
-  });
-
-  document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
-    carouselInterval = setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 5000);
-  });
-
-  // Initialize the carousel
-  initCarousel();
-});
-
-// Circular Border Scroll Progress
-const scrollProgress = document.querySelector('.scroll-progress-corner');
-const circle = document.querySelector('.progress-ring-circle');
-const radius = circle.r.baseVal.value;
-const circumference = 2 * Math.PI * radius;
-
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = circumference;
-
-function updateProgress() {
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = window.scrollY;
-  const progress = circumference - (scrolled / scrollHeight) * circumference;
-  
-  circle.style.strokeDashoffset = progress;
-  scrollProgress.classList.toggle('visible', scrolled > 100);
-}
-
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
-
-window.addEventListener('scroll', updateProgress);
-scrollProgress.addEventListener('click', scrollToTop);
-
-// Mobile touch support
-scrollProgress.addEventListener('touchstart', (e) => {
-  e.preventDefault();
-  scrollToTop();
-});
-
-// Initialize
-updateProgress();
-
