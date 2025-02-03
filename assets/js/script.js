@@ -145,3 +145,71 @@ document.querySelectorAll('.promo-card').forEach(card => {
   card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   observer.observe(card);
 });
+
+
+
+// Sticky CTA Logic
+const stickyCTA = document.querySelector('.sticky-cta');
+const closeBtn = document.querySelector('.close-cta');
+let lastScrollPosition = 0;
+let ctaDismissed = false;
+
+// Scroll Handler
+function handleScroll() {
+  const currentScroll = window.scrollY;
+  const scrollDirection = currentScroll > lastScrollPosition ? 'down' : 'up';
+  
+  if (!ctaDismissed && currentScroll > 300 && scrollDirection === 'up') {
+    stickyCTA.classList.add('visible');
+  }
+  
+  lastScrollPosition = currentScroll;
+}
+
+// Countdown Timer
+function updateCountdown() {
+  const now = new Date();
+  const target = new Date();
+  
+  // Set target to next midnight
+  target.setHours(24, 0, 0, 0);
+  
+  const diff = target - now;
+  const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+  const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+  const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+  
+  document.getElementById('countdown').textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Close Functionality
+closeBtn.addEventListener('click', () => {
+  stickyCTA.classList.remove('visible');
+  ctaDismissed = true;
+  localStorage.setItem('ctaDismissed', 'true');
+  
+  // Re-enable after 24 hours
+  setTimeout(() => {
+    localStorage.removeItem('ctaDismissed');
+  }, 24 * 60 * 60 * 1000);
+});
+
+// Initialize
+if (!localStorage.getItem('ctaDismissed')) {
+  window.addEventListener('scroll', handleScroll);
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+}
+
+// Mobile Touch Handling
+let touchStart = 0;
+window.addEventListener('touchstart', e => {
+  touchStart = e.changedTouches[0].screenY;
+});
+
+window.addEventListener('touchend', e => {
+  const touchEnd = e.changedTouches[0].screenY;
+  if (touchStart - touchEnd > 50) { // Swipe up
+    stickyCTA.classList.remove('visible');
+  }
+});
