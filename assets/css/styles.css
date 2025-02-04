@@ -33,6 +33,132 @@ body {
   white-space: nowrap;
 }
 
+
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  animation: rotate 1.5s linear infinite;
+}
+
+.dot-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background: #2563eb;
+  border-radius: 50%;
+  animation: scaleDot 1.5s ease-in-out infinite;
+}
+
+.dot-wrapper.dot1 {
+  transform: rotate(0deg) translate(30px) rotate(0deg);
+}
+
+.dot-wrapper.dot2 {
+  transform: rotate(45deg) translate(30px) rotate(-45deg);
+}
+
+.dot-wrapper.dot3 {
+  transform: rotate(90deg) translate(30px) rotate(-90deg);
+}
+
+.dot-wrapper.dot4 {
+  transform: rotate(135deg) translate(30px) rotate(-135deg);
+}
+
+.dot-wrapper.dot5 {
+  transform: rotate(180deg) translate(30px) rotate(-180deg);
+}
+
+.dot-wrapper.dot6 {
+  transform: rotate(225deg) translate(30px) rotate(-225deg);
+}
+
+.dot-wrapper.dot7 {
+  transform: rotate(270deg) translate(30px) rotate(-270deg);
+}
+
+.dot-wrapper.dot8 {
+  transform: rotate(315deg) translate(30px) rotate(-315deg);
+}
+
+.dot-wrapper.dot1 .dot {
+  animation-delay: 0s;
+}
+
+.dot-wrapper.dot2 .dot {
+  animation-delay: 0.1875s;
+}
+
+.dot-wrapper.dot3 .dot {
+  animation-delay: 0.375s;
+}
+
+.dot-wrapper.dot4 .dot {
+  animation-delay: 0.5625s;
+}
+
+.dot-wrapper.dot5 .dot {
+  animation-delay: 0.75s;
+}
+
+.dot-wrapper.dot6 .dot {
+  animation-delay: 0.9375s;
+}
+
+.dot-wrapper.dot7 .dot {
+  animation-delay: 1.125s;
+}
+
+.dot-wrapper.dot8 .dot {
+  animation-delay: 1.3125s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleDot {
+
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+
+
 /* Header Styles */
 header {
   display: flex;
