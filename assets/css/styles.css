@@ -1524,4 +1524,41 @@ blockquote {
     height: 35px;
   }
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+  }
 
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.sticky-book-now {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+
+.sticky-book-now:hover {
+  background-color: #1558ea;
+  transform: translateY(-2px);
+}
