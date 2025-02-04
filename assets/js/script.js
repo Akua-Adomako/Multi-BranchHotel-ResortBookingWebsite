@@ -1,10 +1,10 @@
 window.addEventListener("load", function () {
   const loadingScreen = document.getElementById("loading-screen");
-  loadingScreen.style.transition = "opacity 0.5s ease-out";
+  loadingScreen.style.transition = "opacity 1.5s ease-out";
   loadingScreen.style.opacity = "0";
   setTimeout(function () {
     loadingScreen.style.display = "none";
-  }, 500);
+  }, 700);
 });
 
 // navigation sidebar responsive
