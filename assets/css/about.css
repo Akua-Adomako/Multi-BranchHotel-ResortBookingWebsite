@@ -211,9 +211,9 @@
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -294,7 +294,13 @@
   opacity: 0.1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .values-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 100%;
+    }
+
   .value-card {
     height: 300px;
   }
